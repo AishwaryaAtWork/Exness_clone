@@ -43,7 +43,7 @@ const Hero = () => {
 
   return (
     <div
-      className=" w-full lg:w-8/12 h-[68vh] lg:rounded-b-lg mt-20 flex flex-col items-center overflow-hidden relative"
+      className=" w-full lg:w-8/12 h-[68vh] lg:rounded-b-lg mt-20  flex flex-col items-center overflow-hidden relative"
       name="hero"
     >
       <Image

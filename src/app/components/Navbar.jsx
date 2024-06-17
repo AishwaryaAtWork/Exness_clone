@@ -5,6 +5,7 @@ import { IoMdClose } from "react-icons/io";
 import { MdOutlineLanguage } from "react-icons/md";
 import logo from '@/app/utils/logo.svg';
 import Image from "next/image";
+import Link from "next/link";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -40,7 +41,9 @@ const Navbar = () => {
               onClick={() => setMenuOpen(true)}
             />
           )}
+          <Link href={'/'}>
           <Image src={logo} alt="logo" width={200} />
+          </Link>
         </div>
 
         <div className="flex items-center gap-7 lg:px-5">
@@ -70,13 +73,13 @@ const Navbar = () => {
 
         {!isMobile && (
           <div
-            className={`bg-white border border-gray-300 rounded-md p-6 text-gray-700 text-xl text-extrabold list-none
-          absolute top-20 ${menuOpen ? "block" : "hidden"}`}
+            className={`flex flex-col bg-white border border-gray-300 rounded-md p-6 space-y-8 text-gray-700 text-xl 
+              text-extrabold list-none absolute top-20 ${menuOpen ? "block" : "hidden"}`}
           >
-            <li className="pb-3">Introducing Broker Program</li>
-            <li className="py-3">Affiliate Program</li>
-            <li className="py-3">Loyality Program</li>
-            <li className="pt-3">Help Center</li>
+            <Link href={'/introducing-broker-program'} >Introducing Broker Program</Link>
+            <Link href={'/affiliate-program'} >Affiliate Program</Link>
+            <Link href={'/loyalty-program'} >Loyality Program</Link>
+            <li>Help Center</li>
           </div>
         )}
 
@@ -87,11 +90,9 @@ const Navbar = () => {
             } z-50 p-10 
           text-gray-700 text-xl text-extrabold list-none space-y-2 transition-all ease-in-out duration-500`}
           >
-            <li className="py-5 border-b border-gray-400">
-              Introducing Broker Program
-            </li>
-            <li className="py-5 border-b border-gray-400">Affiliate Program</li>
-            <li className="py-5 border-b border-gray-400">Loyality Program</li>
+            <Link href={'/introducing-broker-program'} className="py-5 border-b border-gray-400">Introducing Broker Program</Link>
+            <Link href={'/affiliate-program'} className="py-5 border-b border-gray-400">Affiliate Program</Link>
+            <Link href={'/loyalty-program'} className="py-5 border-b border-gray-400">Loyality Program</Link>
             <li className="py-5 border-b border-gray-400">Help Center</li>
 
             <div className="py-16 flex flex-col gap-6 w-full">

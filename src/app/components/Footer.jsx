@@ -9,16 +9,6 @@ import { Link as SLink } from "react-scroll";
 const Footer = () => {
   return (
     <>
-        <div className="bg-gray-200/60 w-full py-5 lg:py-10 flex items-center justify-center">
-            <div className="w-full lg:w-8/12 flex flex-col lg:flex-row items-center lg:justify-between px-6">
-            <p className="text-4xl text-gray-600 font-semibold text-center lg:text-left py-8 lg:py-1">Become an Exness Partner today!</p>
-            <button className="bg-yellow-400 hover:bg-yellow-300 duration-300 py-3 px-6 text-xl 
-            font-semibold rounded-md">
-            Start now
-          </button>
-            </div>
-        </div>
-
       <div className="h-auto lg:h-auto w-full lg:w-8/12 px-4 lg:px-8 lg:py-16 py-8">
         <div className="h-auto lg:h-12 w-full flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-0">
           <Image src={logo} alt="logo" width={200} />
