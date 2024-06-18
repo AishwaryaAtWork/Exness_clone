@@ -16,7 +16,7 @@ const AffiliateContent = () => {
     <div className='h-auto w-full lg:w-8/12 my-5 flex flex-col items-center py-6 '>
     <p className='text-4xl font-semibold py-5'>What we offer</p>
     <div className='h-auto lg:h-[55vh] w-[90%] lg:w-[75%] my-10 bg-white rounded-lg shadow-lg shadow-gray-200 flex flex-col 
-                justify-between px-8 py-5 hover:-translate-y-5 hover:shadow-gray-500 hover:shadow-2xl duration-500'>
+        justify-between px-8 py-5 hover:-translate-y-5 hover:shadow-gray-500 hover:shadow-2xl duration-500'>
                 
                 <div className='flex flex-col items-center py-5'>
                 <p className='text-3xl font-bold text-center'>We pay for first-time deposits (CPA)</p>
@@ -40,33 +40,34 @@ const AffiliateContent = () => {
             
     </div>
 
-    <div className='h-auto w-full lg:w-8/12 my-5 flex flex-col items-center py-6 '>
+    <div className='h-auto w-full lg:w-8/12 my-2 lg:my-5 flex flex-col items-center py-6 '>
     <p className='text-4xl font-semibold py-5'>What we offer</p>
 
-    <div className='w-full h-[120vh] space-y-10 my-6'>
-        <div className='h-[48%] w-full grid grid-cols-2 grid-rows-2 gap-8'>
+    <div className='w-full h-auto lg:h-[120vh] space-y-10 my-6'>
+        <div className='h-[48%] w-full grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 gap-8'>
             {affiliate.slice(0,4).map((_,i)=>(
-                <div className='w-full h-full bg-gray-100 rounded-lg p-10 flex items-center gap-6 overflow-hidden' key={i}>
-                    <FaRegStar className='text-7xl'/>
-                    <p className='w-[80%] text-2xl font-bold'>We're a trusted market leader - Exness brokers are regulated by 
+                <div className='w-full h-full bg-gray-100 rounded-lg p-8 lg:p-10 flex items-center gap-6 overflow-hidden' key={i}>
+                    <FaRegStar className='text-4xl lg:text-7xl'/>
+                    <p className='w-[80%] text-lg lg:text-2xl font-bold'>We're a trusted market leader - Exness brokers are regulated by 
                         FSA, CySEC, FCA, FSCA, FSC, FCS, CMA</p>
                 </div>
             ))}
         </div>
-        <div className='h-[46%] w-full overflow-hidden bg-gray-100 rounded-lg p-12 flex flex-col items-center justify-between'>
+        <div className='h-auto lg:h-[46%] w-full overflow-hidden bg-gray-100 rounded-lg p-4 lg:p-12 flex flex-col items-center 
+        justify-between gap-5 lg:gap-1'>
             <div className='flex flex-col items-center'>
-            <p className='text-3xl font-bold my-8'>Various payment systems</p>
-            <div className=' flex gap-6'>
+            <p className='text-xl lg:text-3xl font-bold my-4 lg:my-8 text-center'>Various payment systems</p>
+            <div className='grid grid-cols-2 lg:grid-rows-1 lg:grid-cols-6 gap-5'>
                 {affiliate.slice(0,6).map((_,i)=>(
-                    <Image src={aff1} alt='img' width={200} key={i}/>
+                    <Image src={aff1} alt='img' width={200} key={i} className='w-[90%] lg:w-auto'/>
                 ))}
             </div>
             </div>
             <div className='flex flex-col items-center'>
-            <p className='text-3xl font-bold my-8'>Seamless integration with all major trackers</p>
-            <div className=' flex gap-6'>
+            <p className='text-xl lg:text-3xl font-bold my-4 lg:my-8 text-center'>Seamless integration with all major trackers</p>
+            <div className='grid grid-cols-2 lg:grid-rows-1 lg:grid-cols-6 gap-5'>
                 {affiliate.slice(0,6).map((_,i)=>(
-                    <Image src={aff2} alt='img' width={150} key={i}/>
+                    <Image src={aff2} alt='img' width={150} key={i}  className='w-[90%] lg:w-auto'/>
                 ))}
             </div>
             </div>
@@ -76,17 +77,17 @@ const AffiliateContent = () => {
     </div>
     </div>
 
-    <div className='h-auto w-full lg:w-8/12 my-5 flex flex-col items-center py-6 '>
+    <div className='h-auto w-full lg:w-8/12 my-2 lg:my-5 flex flex-col items-center py-6 px-4 lg:px-2'>
     <p className='text-4xl font-semibold py-5'>Our awards</p>
 
-    <div className='flex gap-7 my-5'>
+    <div className='grid grid-cols-2 lg:grid-cols-5 lg:grid-rows-1 gap-7 my-5'>
     {affiliate.slice(0,5).map((_,i)=>(
             <Image alt='awards' src={award1} width={200} key={i}/>
         ))}
     </div>
     </div>
 
-    <div className='h-auto w-full my-5 flex flex-col items-center py-6 bg-gray-100'>
+    <div className='h-auto w-full my-5 flex-col items-center py-6 bg-gray-100 hidden lg:flex'>
         <div className='w-full lg:w-8/12 h-[58vh] flex flex-col items-center py-10'>
         <p className='text-4xl font-semibold py-5'>How to get started</p>
 

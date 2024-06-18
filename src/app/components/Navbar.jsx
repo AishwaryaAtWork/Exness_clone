@@ -26,6 +26,12 @@ const Navbar = () => {
     };
   }, []);
 
+  const handleClose =()=>{
+    setTimeout(()=>{
+      setMenuOpen(false)
+    },500)
+  }
+
   return (
     <div className="w-full h-20 p-3 bg-white shadow-lg lg:shadow-gray-200 fixed flex items-center justify-center z-50">
       <div className="h-[80%] w-full lg:w-8/12 flex justify-between items-center">
@@ -33,12 +39,18 @@ const Navbar = () => {
           {menuOpen ? (
             <IoMdClose
               className="text-3xl cursor-pointer"
-              onClick={() => setMenuOpen(false)}
+              onClick={() =>{ 
+                setMenuOpen(false)
+                setLangOpen(false)
+              }}
             />
           ) : (
             <RxHamburgerMenu
               className="text-3xl cursor-pointer"
-              onClick={() => setMenuOpen(true)}
+              onClick={() =>{
+                setMenuOpen(true)
+                setLangOpen(false)
+              }}
             />
           )}
           <Link href={'/'}>
@@ -50,7 +62,10 @@ const Navbar = () => {
           <button
             className="border border-white hover:bg-gray-100 hover:border-gray-500 duration-300 lg:p-3 
               text-lg font-semibold rounded-md flex gap-3 items-center"
-            onClick={() => setLangOpen((prev) => !prev)}
+            onClick={() =>{
+              setLangOpen((prev) => !prev)
+              setMenuOpen(false)
+            }}
           >
             <MdOutlineLanguage className="text-3xl lg:text-xl" />
             <span className="hidden lg:block">EN</span>
@@ -88,12 +103,16 @@ const Navbar = () => {
             className={`h-screen w-screen bg-white absolute top-20 ${
               menuOpen ? "-left-0" : "-left-[100vw]"
             } z-50 p-10 
-          text-gray-700 text-xl text-extrabold list-none space-y-2 transition-all ease-in-out duration-500`}
+          text-gray-700 text-xl text-extrabold list-none flex flex-col transition-all ease-in-out duration-500`}
           >
-            <Link href={'/introducing-broker-program'} className="py-5 border-b border-gray-400">Introducing Broker Program</Link>
-            <Link href={'/affiliate-program'} className="py-5 border-b border-gray-400">Affiliate Program</Link>
-            <Link href={'/loyalty-program'} className="py-5 border-b border-gray-400">Loyality Program</Link>
-            <li className="py-5 border-b border-gray-400">Help Center</li>
+            <Link href={'/introducing-broker-program'} className="py-8 border-b border-gray-400"
+              onClick={handleClose}>Introducing Broker Program</Link>
+            <Link href={'/affiliate-program'} className="py-5 border-b border-gray-400"
+              onClick={handleClose}>Affiliate Program</Link>
+            <Link href={'/loyalty-program'} className="py-5 border-b border-gray-400"
+            onClick={handleClose}>Loyality Program</Link>
+            <li className="py-5 border-b border-gray-400"
+            onClick={handleClose}>Help Center</li>
 
             <div className="py-16 flex flex-col gap-6 w-full">
               <button
